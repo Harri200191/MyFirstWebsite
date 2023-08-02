@@ -2,3 +2,13 @@ body{
     background-color: aqua;
     background-size: auto;
 }
+
+h1 {
+    background-color: green;
+    align-items: center;
+}
+
+div {
+    background-color: green;
+    opacity: 0.3;
+}
