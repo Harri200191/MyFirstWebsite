@@ -12,3 +12,21 @@ div {
     background-color: green;
     opacity: 0.3;
 }
+
+#btn{
+    padding: 10px 14px;
+    background-color: black;
+    border: 2px solid black;
+    color: whitesmoke;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#btn2{
+    padding: 10px 14px;
+    background-color: black;
+    border: 2px solid black;
+    color: whitesmoke;
+    font-weight: bold;
+    border-radius: 10px;
+}

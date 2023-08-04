@@ -124,11 +124,46 @@ class car {
     }
 }
 var Car1 = new car("Ferarri", 1500);
-alert("This intents to test popups");
-let testname = prompt("Enter your name", "Default text");
-let deleteitem = confirm("Do you really want to delete this item");
-console.log(deleteitem);
-let main = document.getElementById("main");
-console.log(main);
+//alert("This intents to test popups");
+//let testname = prompt("Enter your name", "Default text");
+//let deleteitem = confirm("Do you really want to delete this item");
+//console.log(deleteitem);
+//let main = document.getElementById("main");
+//console.log(main);
 let nav = document.getElementById("nav");
 console.log(nav.innerHTML);
+let cont = document.getElementsByClassName("container");
+
+let btn = document.getElementById("btn");
+let para = document.getElementById("nav");
+
+let deleteitem;
+
+btn.addEventListener("click", function run(){
+    if (para.style.display != "none"){
+        deleteitem = confirm("Do you really want to hide this paragraph?");
+        para.style.display = "none";
+    }
+    else{
+        deleteitem = confirm("Do you really want to show this paragraph?");
+        para.style.display = "block";
+    }
+
+});
+
+function greet(){
+    console.log("Hello");
+}
+
+let btn2 = document.getElementById("btn2");
+//btn2.addEventListener("click", setTimeout(greet, 5000));
+
+function displaytime(){
+    time = new Date();
+    document.getElementById("time").innerHTML = time;
+}
+
+setInterval(displaytime, 1000);
+
+let dt = new Date();
+console.log(dt.getFullYear());
