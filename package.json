@@ -1,0 +1,19 @@
+{
+  "name": "myfirstwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harri200191/MyFirstWebsite.git"
+  },
+  "author": "Haris Rehman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harri200191/MyFirstWebsite/issues"
+  },
+  "homepage": "https://github.com/Harri200191/MyFirstWebsite#readme"
+}
