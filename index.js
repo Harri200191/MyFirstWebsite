@@ -167,6 +167,8 @@ function displaytime(){
 setInterval(displaytime, 1000);
 
 let dt = new Date();
+
+
 console.log(dt.getFullYear());
 
 
