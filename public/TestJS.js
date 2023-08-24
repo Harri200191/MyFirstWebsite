@@ -1,6 +1,3 @@
-// This is a comment. Use // for commenting
-/* This is a multiline 
-comment */
 var myName = "Haris Rehman"; //one way to declare a variable
 //console.log(myName); //for out
 myName = 25.44;
@@ -133,12 +130,11 @@ let main = document.getElementById("main");
 console.log(main);
 let nav = document.getElementById("nav");
 console.log(nav.innerHTML);
-let cont = document.getElementsByClassName("container"); */
+let cont = document.getElementsByClassName("container");
 
 let btn = document.getElementById("btn");
-let para = document.getElementById("nav");
+let para = document.getElementById("nav"); */
 
-let deleteitem;
 
 btn.addEventListener("click", function run(){
     if (para.style.display != "none"){
