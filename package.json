@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Harri200191/MyFirstWebsite/issues"
   },
-  "homepage": "https://github.com/Harri200191/MyFirstWebsite#readme"
+  "homepage": "https://github.com/Harri200191/MyFirstWebsite#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
