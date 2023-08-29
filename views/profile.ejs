@@ -3,12 +3,12 @@
 <head>
   <title><%= user.firstName %>'s Profile</title>
 </head>
-<%- include('header', { title: 'Home' }) %>
+<%- include('common/header', { title: 'Home' }) %>
 <body>
   <h1>Welcome to <%= user.firstName %>'s Profile</h1>
   <p><strong>Username:</strong> <%= user.username %></p>
   <p><strong>Name:</strong> <%= user.firstName %> <%= user.lastName %></p>
   <p><strong>Email:</strong> <%= user.email %></p>
 </body>
-<%- include('footer') %>
+<%- include('common/footer') %>
 </html>

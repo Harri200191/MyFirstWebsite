@@ -5,6 +5,20 @@ const PublicPath = path.join(__dirname, "public");
 const app = express();
 //app.use(express.static(PublicPath));
 
+// MIDDLEWARE------------------------------
+const reqFilter = (req, resp, next) => {
+    if (!req.query.age){
+        resp.send("Please provide age");
+    }
+    else
+    {
+        next(); //always needed to move to main app
+    }
+};
+
+app.use(reqFilter);
+
+// TEMPORARY TEST DATA --------------------
 const userData = {
     username: 'harry19',
     firstName: 'Haris',
