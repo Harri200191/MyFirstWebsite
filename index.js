@@ -1,22 +1,11 @@
 const express = require("express");
 const path = require("path");
+const reqFilter = require('./middleware');
 
 const PublicPath = path.join(__dirname, "public");
 const app = express();
+const route = express.route();
 //app.use(express.static(PublicPath));
-
-// MIDDLEWARE------------------------------
-const reqFilter = (req, resp, next) => {
-    if (!req.query.age){
-        resp.send("Please provide age");
-    }
-    else
-    {
-        next(); //always needed to move to main app
-    }
-};
-
-app.use(reqFilter);
 
 // TEMPORARY TEST DATA --------------------
 const userData = {
@@ -29,7 +18,7 @@ const userData = {
 // APP STARTS HERE --------------------------
 app.set('view engine', 'ejs');
 
-app.get('', (_, res) =>{
+app.get('', reqFilter, (_, res) =>{
     res.sendFile(`${PublicPath}/index.html`)
 });
 
