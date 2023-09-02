@@ -1,10 +1,12 @@
 const express = require("express");
 const path = require("path");
 const reqFilter = require('./middleware');
+const getData = require("./mongodb");
 
 const PublicPath = path.join(__dirname, "public");
 const app = express();
-const route = express.route();
+//const route = express.route();
+
 //app.use(express.static(PublicPath));
 
 // TEMPORARY TEST DATA --------------------
@@ -14,6 +16,9 @@ const userData = {
     lastName: 'Rehman',
     email: 'harisrehmanchugtai@gmail.com'
 };
+
+// GETTING MONGODB DATA ---------------------
+getData();
 
 // APP STARTS HERE --------------------------
 app.set('view engine', 'ejs');

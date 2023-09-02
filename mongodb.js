@@ -1,9 +1,16 @@
-const mongoose = require('mongoose');
+const {MongoClient} = require("mongodb");
+const url_for_mongodb = "mongodb://localhost:27017";
+const client = new MongoClient(url_for_mongodb);
 
-const userSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  // Add more fields as needed
-});
+async function getData()
+{
+  let result = await client.connect();
+  let db = result.db("test");
+  let collection = db.collection("num1");
+  let response = await collection.find({}).toArray();
+  console.log(response);
+}
 
-module.exports = mongoose.model('User', userSchema);
+getData();
+
+module.exports = getData;
