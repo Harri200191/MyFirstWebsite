@@ -18,7 +18,7 @@ const userData = {
 };
 
 // GETTING MONGODB DATA ---------------------
-getData();
+
 
 // APP STARTS HERE --------------------------
 app.set('view engine', 'ejs');

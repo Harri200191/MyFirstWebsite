@@ -1,16 +1,14 @@
-const {MongoClient} = require("mongodb");
-const url_for_mongodb = "mongodb://localhost:27017";
-const client = new MongoClient(url_for_mongodb);
+const mongoose = require('mongoose');
+const mongoURI = 'mongodb://localhost:27017';
 
-async function getData()
-{
-  let result = await client.connect();
-  let db = result.db("test");
-  let collection = db.collection("num1");
-  let response = await collection.find({}).toArray();
-  console.log(response);
-}
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-getData();
+const db = mongoose.connection;
 
-module.exports = getData;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+  console.log('Connected to MongoDB!');
+});
