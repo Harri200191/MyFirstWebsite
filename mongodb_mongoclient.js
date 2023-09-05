@@ -15,6 +15,7 @@ async function getData()
 getData();
 
 module.exports = getData;
+
 /* client.connect(err => {
   if (err) {
     console.error('Error connecting to MongoDB:', err);
