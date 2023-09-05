@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const reqFilter = require('./middleware');
+const getData = require("./mongodb_mongoclient");
 
 const PublicPath = path.join(__dirname, "public");
 const app = express();
@@ -17,7 +18,7 @@ const userData = {
 };
 
 // GETTING MONGODB DATA ---------------------
-
+getData();
 
 // APP STARTS HERE --------------------------
 app.set('view engine', 'ejs');
