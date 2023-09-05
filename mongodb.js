@@ -21,16 +21,8 @@ const dbName = 'test';
 async function connectToMongoDB() {
   try {
     const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
-
-    // Connect to the MongoDB server
     await client.connect();
-
-    // Access the database
     const db = client.db(dbName);
-
-    // Perform database operations here
-
-    // Close the connection
     client.close();
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
