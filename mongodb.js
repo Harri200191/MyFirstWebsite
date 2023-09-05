@@ -12,3 +12,28 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB!');
 });
+
+// ATTEMPT 2 -------------------------------------------------------------
+const { MongoClient } = require('mongodb');
+const url = 'mongodb://localhost:27017';
+const dbName = 'test';
+
+async function connectToMongoDB() {
+  try {
+    const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+
+    // Connect to the MongoDB server
+    await client.connect();
+
+    // Access the database
+    const db = client.db(dbName);
+
+    // Perform database operations here
+
+    // Close the connection
+    client.close();
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error);
+  }
+}
+

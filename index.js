@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const reqFilter = require('./middleware');
-const getData = require("./mongodb");
 
 const PublicPath = path.join(__dirname, "public");
 const app = express();
@@ -18,7 +17,20 @@ const userData = {
 };
 
 // GETTING MONGODB DATA ---------------------
+const mongoose = require('mongoose');
+const mongoURI = 'mongodb://localhost:27017';
 
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+  console.log('Connected to MongoDB!');
+});
 
 // APP STARTS HERE --------------------------
 app.set('view engine', 'ejs');
