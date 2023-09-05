@@ -15,7 +15,7 @@ db.once('open', () => {
 
 // ATTEMPT 2 -------------------------------------------------------------
 const { MongoClient } = require('mongodb');
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://0.0.0.0:27017';
 const dbName = 'test';
 
 async function connectToMongoDB() {
@@ -29,20 +29,6 @@ async function connectToMongoDB() {
   }
 }
 
-async function insertDocument() {
-  try {
-    const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
-    await client.connect();
-    const db = client.db(dbName);
-    const collection = db.collection('num1');
-    const result = await collection.insertOne({ name: 'John Doe', age: 30 });
-    console.log('Document inserted:', result.ops);
-    client.close();
-  } catch (error) {
-    console.error('Error inserting document:', error);
-  }
-}
-
-insertDocument();
+connectToMongoDB();
 
 
