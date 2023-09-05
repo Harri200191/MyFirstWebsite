@@ -1,3 +1,4 @@
+// Connecting with Database
 const mongoose = require('mongoose');
 const mongoURI = 'mongodb://0.0.0.0:27017';
 
@@ -13,4 +14,4 @@ db.once('open', () => {
   console.log('Connected to MongoDB!');
 });
 
-
+// Adding data to database
