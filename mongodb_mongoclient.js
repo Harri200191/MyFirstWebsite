@@ -1,9 +1,8 @@
 const MongoClient = require('mongodb').MongoClient;
 
-const uri = 'mongodb://localhost:27017';
+const uri = 'mongodb://0.0.0.0:27017';
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-// Connect to the MongoDB server
 client.connect(err => {
   if (err) {
     console.error('Error connecting to MongoDB:', err);
