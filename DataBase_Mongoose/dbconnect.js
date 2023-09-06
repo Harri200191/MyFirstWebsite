@@ -1,23 +1,23 @@
 const mongoose = require("mongoose");
 const uri = 'mongodb://0.0.0.0:27017';
 
-const main = async () => {
-    await mongoose.connect(uri);
+await mongoose.connect(uri);
 
-    // defining a fixed data type for fields in database 
-    const test_schema = new mongoose.Schema(
-        {
-            first_name: String,
-            last_name : String,
-            email : String,
-            gender: String,
-            ip_address : String
-        }
-    );
+// defining a fixed data type for fields in database 
+const test_schema = new mongoose.Schema(
+    {
+        first_name: String,
+        last_name : String,
+        email : String,
+        gender: String,
+        ip_address : String
+    }
+);
 
-    const test_model = new mongoose.model('num1', test_schema);
+const saveindb = async () => {
+    const test = new mongoose.model('num1', test_schema);
 
-    let data = new test_model(            
+    let data = new test(            
         {
             first_name : "haris",
             last_name : "chugtai",
@@ -31,4 +31,31 @@ const main = async () => {
     console.log(result);
 };
 
-module.exports = main;
+const updateindb = async () => {
+    const test = new mongoose.model('num1', test_schema);
+    let data = await test.updateOne(
+        {first_name: "haris"},
+        {$set: {first_name: 'asima'}}
+    )
+}
+
+const deleteindb = async () => {
+    const test = new mongoose.model('num1', test_schema)
+    let data = await test.deleteOne(
+        {
+            first_name : "Noell"
+        }
+    )
+}
+
+const findindb = async () => {
+    const test = new mongoose.model('num1', test_schema)
+    let data = await test.find({first_name: "haris"});
+}
+
+module.exports = {
+    saveindb, 
+    test_schema, 
+    deleteindb,
+    findindb
+};
