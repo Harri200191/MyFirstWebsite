@@ -21,7 +21,20 @@ app.post('/', async (req, resp) => {
 
 app.put('/', async (req, resp) =>{
     let data = await dbConnect();
-    let result = await data.updateOne(req.body);
+    let result = await data.updateOne(
+        // first object showing records which you want to change
+        {first_name: req.body.last_name},
+        // conditions to follow and change data
+        {$set: req.body}
+    );
+    resp.send(result);
+});
+
+// /:first_name is used to send data in postman through the url paramters
+// like: localhost:5000/first_name
+app.delete('/:first_name', async (req, resp) =>{
+    let data = await dbConnect();
+    let result = await data.deleteOne({first_name: req.params.first_name});
     resp.send(result);
 });
 

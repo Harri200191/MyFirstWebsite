@@ -20,14 +20,6 @@ const userData = {
     email: 'harisrehmanchugtai@gmail.com'
 };
 
-// GETTING MONGODB DATA ---------------------
-const main = async() => {
-    let data = await dbConnect();
-    data = await data.find({}).toArray();
-};
-
-main();
-
 // APP STARTS HERE --------------------------
 app.set('view engine', 'ejs');
 
