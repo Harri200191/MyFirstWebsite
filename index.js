@@ -5,6 +5,7 @@ const dbConnect = require("./DataBase/mongodb_mongoclient");
 const insertdataindb = require("./DataBase/insertdataindb");
 const updatedataindb = require("./DataBase/updatedataindb");
 const deletedataindb = require("./DataBase/deletedataindb");
+const db_with_mongoose = require("./DataBase_Mongoose/dbconnect");
 
 const PublicPath = path.join(__dirname, "public");
 const app = express();
