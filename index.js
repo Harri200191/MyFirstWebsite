@@ -24,7 +24,7 @@ const userData = {
 // APP STARTS HERE --------------------------
 app.set('view engine', 'ejs');
 
-app.get('', reqFilter, (_, res) =>{
+app.get('/', reqFilter, (_, res) =>{
     res.sendFile(`${PublicPath}/index.html`)
 });
 
