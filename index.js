@@ -10,8 +10,8 @@ const db_with_mongoose = require("./DataBase_Mongoose/dbconnect");
 const PublicPath = path.join(__dirname, "public");
 const app = express();
 
-//const route = express.route();
-//app.use(express.static(PublicPath));
+const route = express.route();
+app.use(express.static(PublicPath));
 
 // TEMPORARY TEST DATA --------------------
 const userData = {
@@ -44,4 +44,4 @@ app.get('*', (_, res) =>{
     res.sendFile(`${PublicPath}/404page.html`)
 });
 
-app.listen(4000);
+app.listen(5000);
